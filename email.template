@@ -1,0 +1,8 @@
+Subject: [#host] IP Changed to #currentAddress (on #currentDate)
+
+We detected a new IP address on #host at #currentTime (#currentDate).
+
+---
+Currently:  #currentAddress
+Previously: #previousAddress
+
