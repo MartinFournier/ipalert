@@ -11,7 +11,7 @@ getEmailTemplate() {
 }
 
 getAddress() {
-  wget -q -O - https://ipinfo.io/ip
+  wget -q -O - https://ipinfo.io/ip || echo $previousAddress
 }
 
 lastAddressFile="/app/data/ip"
@@ -19,11 +19,12 @@ logFile="/app/data/ip.log"
 currentTime=$(date +%T)
 currentDate=$(date +"%y-%m-%d")
 
-currentAddress=$(getAddress)
 if [ -f $lastAddressFile ]; then
   echo Found previous address file
   previousAddress=$(cat $lastAddressFile)
 fi
+currentAddress=$(getAddress)
+
 if [ "$currentAddress" == "$previousAddress" ]; then
   echo IP address did not change
   echo $currentDate $currentTime " | " $currentAddress >> $logFile
