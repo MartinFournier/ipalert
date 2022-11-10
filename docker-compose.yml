@@ -8,6 +8,6 @@ services:
       - ./data:/app/data
       - ./ssmtp.conf:/etc/ssmtp/ssmtp.conf
     environment:
-      - "host="
-      - "recipient="
+      - "host=${template_host}"
+      - "recipient=${email_recipient}"
 
