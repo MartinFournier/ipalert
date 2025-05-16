@@ -1,13 +1,9 @@
-version: '2'
 services:
-  ipalert:
-    build: .
-    image: mfournier/ipalert:latest
-    container_name: ipalert
-    volumes:
-      - ./data:/app/data
-      - ./ssmtp.conf:/etc/ssmtp/ssmtp.conf
-    environment:
-      - "host=${template_host}"
-      - "recipient=${email_recipient}"
+    ipalert:
+        build: .
+        image: mfournier/ipalert:latest
+        container_name: ipalert
+        volumes:
+        - ./data:/app/data
+        - .env:/app/.env
 

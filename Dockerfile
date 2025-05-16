@@ -1,11 +1,10 @@
 FROM alpine:latest
 
-RUN apk update && apk add ssmtp
+RUN apk update && apk add msmtp ca-certificates wget sed gettext
 
-CMD mkdir -p /app
 WORKDIR /app
-ADD email.template email.template
-ADD main.sh main.sh
-RUN chmod u+x main.sh
+
+COPY msmtprc.template email.template main.sh ./
+RUN chmod +x main.sh
 
 ENTRYPOINT ["./main.sh"]

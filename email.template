@@ -1,8 +1,9 @@
-Subject: [#host] IP Changed to #currentAddress (on #currentDate)
+To: $IPALERT_RECIPIENT
+From: $GMAIL_FROM
+Subject: [$IPALERT_SOURCE] IP Changed to $IPALERT_CURRENT_ADDRESS (on $IPALERT_CURRENT_DATE)
 
-We detected a new IP address on #host at #currentTime (#currentDate).
+We detected a new IP address on $IPALERT_SOURCE at $IPALERT_CURRENT_TIME ($IPALERT_CURRENT_DATE).
 
----
-Currently:  #currentAddress
-Previously: #previousAddress
+Currently:  $IPALERT_CURRENT_ADDRESS
+Previously: $IPALERT_PREVIOUS_ADDRESS
 
