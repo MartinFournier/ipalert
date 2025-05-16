@@ -15,7 +15,7 @@ $ cp .env.example .env
 Once the files have been edited, you can run the container
 
 ```sh
-$ docker compose --remove-orphans --build ipalert
+$ docker compose run --remove-orphans --build ipalert
 ```
 
 ## Setting up a cron job
